@@ -1,0 +1,99 @@
+.
+├── app
+│   ├── build.gradle
+│   ├── proguard-rules.pro
+│   └── src
+│       └── main
+│           ├── AndroidManifest.xml
+│           ├── java
+│           │   └── com
+│           │       └── notifyvault
+│           │           ├── MainActivity.kt
+│           │           ├── NotifyVaultApp.kt
+│           │           ├── data
+│           │           │   ├── db
+│           │           │   │   ├── NotificationDao.kt
+│           │           │   │   └── NotifyVaultDatabase.kt
+│           │           │   ├── model
+│           │           │   │   └── NotificationEntity.kt
+│           │           │   └── repository
+│           │           │       └── NotificationRepository.kt
+│           │           ├── di
+│           │           │   └── AppModule.kt
+│           │           ├── service
+│           │           │   ├── BootAndReminderReceiver.kt
+│           │           │   └── NotificationListenerService.kt
+│           │           ├── ui
+│           │           │   ├── MainViewModel.kt
+│           │           │   ├── components
+│           │           │   │   ├── NotificationCard.kt
+│           │           │   │   └── ReminderDialog.kt
+│           │           │   ├── screens
+│           │           │   │   ├── HomeScreen.kt
+│           │           │   │   ├── PermissionScreen.kt
+│           │           │   │   ├── SettingsScreen.kt
+│           │           │   │   ├── SplashScreen.kt
+│           │           │   │   └── StatsScreen.kt
+│           │           │   └── theme
+│           │           │       ├── Theme.kt
+│           │           │       └── Typography.kt
+│           │           └── utils
+│           │               ├── Extensions.kt
+│           │               └── NotificationPermissionHelper.kt
+│           └── res
+│               ├── drawable
+│               │   └── ic_splash_logo.xml
+│               ├── ic_launcher-web.png
+│               ├── mipmap-anydpi-v26
+│               │   ├── ic_launcher.xml
+│               │   └── ic_launcher_round.xml
+│               ├── mipmap-hdpi
+│               │   ├── ic_launcher.png
+│               │   ├── ic_launcher_foreground.png
+│               │   ├── ic_launcher_monochrome.png
+│               │   └── ic_launcher_round.png
+│               ├── mipmap-ldpi
+│               │   ├── ic_launcher.png
+│               │   └── ic_launcher_round.png
+│               ├── mipmap-mdpi
+│               │   ├── ic_launcher.png
+│               │   ├── ic_launcher_foreground.png
+│               │   ├── ic_launcher_monochrome.png
+│               │   └── ic_launcher_round.png
+│               ├── mipmap-xhdpi
+│               │   ├── ic_launcher.png
+│               │   ├── ic_launcher_foreground.png
+│               │   ├── ic_launcher_monochrome.png
+│               │   └── ic_launcher_round.png
+│               ├── mipmap-xxhdpi
+│               │   ├── ic_launcher.png
+│               │   ├── ic_launcher_foreground.png
+│               │   ├── ic_launcher_monochrome.png
+│               │   └── ic_launcher_round.png
+│               ├── mipmap-xxxhdpi
+│               │   ├── ic_launcher.png
+│               │   ├── ic_launcher_foreground.png
+│               │   ├── ic_launcher_monochrome.png
+│               │   └── ic_launcher_round.png
+│               ├── playstore-icon.png
+│               ├── values
+│               │   ├── colors.xml
+│               │   ├── strings.xml
+│               │   └── themes.xml
+│               ├── values-night
+│               │   └── themes.xml
+│               └── xml
+│                   └── notification_service_config.xml
+├── app-manifest.json
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── tree.md
+
+32 directories, 65 files
