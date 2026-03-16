@@ -61,5 +61,21 @@
             android:name=".service.ReminderReceiver"
             android:exported="false" />
 
+        <!--
+            Disable the default WorkManager androidx.startup initializer.
+            Required when the Application class implements Configuration.Provider
+            for on-demand / custom WorkManager initialisation.
+        -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
     </application>
 </manifest>

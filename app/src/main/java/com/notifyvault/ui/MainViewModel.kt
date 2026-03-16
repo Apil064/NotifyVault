@@ -134,8 +134,3 @@ class MainViewModel @Inject constructor(
 }
 
 data class Tuple5<A,B,C,D,E>(val a:A,val b:B,val c:C,val d:D,val e:E)
-operator fun <A,B,C,D,E> Tuple5<A,B,C,D,E>.component1()=a
-operator fun <A,B,C,D,E> Tuple5<A,B,C,D,E>.component2()=b
-operator fun <A,B,C,D,E> Tuple5<A,B,C,D,E>.component3()=c
-operator fun <A,B,C,D,E> Tuple5<A,B,C,D,E>.component4()=d
-operator fun <A,B,C,D,E> Tuple5<A,B,C,D,E>.component5()=e

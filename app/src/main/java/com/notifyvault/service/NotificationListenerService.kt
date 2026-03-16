@@ -123,7 +123,7 @@ class NotificationListenerService : NotificationListenerService() {
 
         val appName = getAppName(sbn.packageName)
         val category = categorizeApp(sbn.packageName, notification.category)
-        val priority = getPriority(notification.priority)
+        val priority = getPriorityFromImportance(sbn)
 
         // Extract action titles
         val actions = notification.actions?.map { it.title?.toString() ?: "" }
@@ -205,12 +205,22 @@ class NotificationListenerService : NotificationListenerService() {
         }
     }
 
-    private fun getPriority(priority: Int): NotificationPriority {
-        return when (priority) {
-            Notification.PRIORITY_MAX, Notification.PRIORITY_HIGH -> NotificationPriority.HIGH
-            Notification.PRIORITY_LOW -> NotificationPriority.LOW
-            Notification.PRIORITY_MIN -> NotificationPriority.LOW
-            else -> NotificationPriority.NORMAL
+    private fun getPriorityFromImportance(sbn: StatusBarNotification): NotificationPriority {
+        // Notification.priority is deprecated since API 26; derive from channel importance instead.
+        val manager = getSystemService(NOTIFICATION_SERVICE) as android.app.NotificationManager
+        val importance = try {
+            manager.getNotificationChannel(sbn.notification.channelId)?.importance
+                ?: android.app.NotificationManager.IMPORTANCE_DEFAULT
+        } catch (e: Exception) {
+            android.app.NotificationManager.IMPORTANCE_DEFAULT
+        }
+        return when (importance) {
+            android.app.NotificationManager.IMPORTANCE_HIGH,
+            android.app.NotificationManager.IMPORTANCE_MAX  -> NotificationPriority.HIGH
+            android.app.NotificationManager.IMPORTANCE_LOW  -> NotificationPriority.LOW
+            android.app.NotificationManager.IMPORTANCE_MIN,
+            android.app.NotificationManager.IMPORTANCE_NONE -> NotificationPriority.LOW
+            else                                             -> NotificationPriority.NORMAL
         }
     }
 }

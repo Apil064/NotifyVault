@@ -2,6 +2,8 @@ package com.notifyvault.utils
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.Chat
+import androidx.compose.material.icons.automirrored.filled.Article
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.notifyvault.data.model.AppCategory
@@ -27,13 +29,13 @@ fun AppCategory.displayName(): String = when (this) {
 
 fun AppCategory.icon(): ImageVector = when (this) {
     AppCategory.SOCIAL -> Icons.Default.People
-    AppCategory.MESSAGING -> Icons.Default.Chat
+    AppCategory.MESSAGING -> Icons.AutoMirrored.Filled.Chat
     AppCategory.EMAIL -> Icons.Default.Email
     AppCategory.SHOPPING -> Icons.Default.ShoppingBag
     AppCategory.FINANCE -> Icons.Default.AccountBalance
     AppCategory.PRODUCTIVITY -> Icons.Default.Work
     AppCategory.ENTERTAINMENT -> Icons.Default.PlayArrow
-    AppCategory.NEWS -> Icons.Default.Article
+    AppCategory.NEWS -> Icons.AutoMirrored.Filled.Article
     AppCategory.HEALTH -> Icons.Default.FitnessCenter
     AppCategory.TRAVEL -> Icons.Default.Flight
     AppCategory.FOOD -> Icons.Default.Restaurant
